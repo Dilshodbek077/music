@@ -1,0 +1,59 @@
+*{
+    scroll-behavior: smooth;
+}
+
+#volumeBtn{
+    position: relative;
+}
+
+#volumeBtn > input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+#volumeBtn:focus > input{
+    display: block !important;
+}
+
+.animation{
+    height: 100vh;
+    width: 100vw;
+}
+
+.animation > img{
+    position: absolute;
+    top: -20%;
+    z-index: -1;
+    border-radius: 50%;
+    width: 500%;
+    animation-name: rot;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    filter: grayscale(0.5);
+
+}
+
+.animation > img:first-of-type{
+    left: -20%;
+}
+
+.animation > img:last-of-type{
+    right: -20%;
+    animation-delay: 5s;
+}
+
+@keyframes rot {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.animation-spin > img{
+    animation-play-state: running;
+    filter: grayscale(0) saturate(200%);
+}

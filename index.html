@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC PLAYER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="overflow-hidden">
+    <div class="absolute flex animation h-screen overflow-hidden">
+        <img id="imageOne" src="" alt="">
+        <img id="imageTwo" src="" alt="">
+    </div>
+    <div  class="h-screen overflow-auto pt-[300px] flex flex-col items-center justify-center bg-[#2222223d] backdrop-blur-[70px]">
+        <div class="w-full max-w-[350px] h-[500px] rounded-lg flex flex-col items-center justify-center">
+            <img id="audioCover" class="max-w-[350px] h-[350px] rounded-lg" src="https://www.wmhbradio.org/wp-content/uploads/2016/07/music-placeholder.png" alt="">
+           
+            <div class="mt-[40px] w-full">
+                <div class="flex justify-between w-full">
+                    <p class="text-gray-100 text-xs" id="audioPlayedTime">00:00</p>
+                    <p class="text-gray-100 text-xs" id="audioDuration">00:00</p> 
+                </div>
+               <div class="flex justify-center mt-[20px]">
+                <button class="w-[50px] h-[50px] rounded-full text-white">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button id="shuffleBtn" class="w-[50px] h-[50px] rounded-full text-white">
+                    <i class="fa-solid fa-shuffle"></i>
+                </button>
+                <button id="prevBtn" class="w-[50px] h-[50px] rounded-full text-white"><i class="fa-solid fa-backward"></i></button>
+                <button id="playBtn" class="bg-green-400 w-[50px] h-[50px] rounded-full">
+                    <i class="fa-solid fa-play ml-[4px]"></i>
+                    <i class="fa-solid fa-pause hidden"></i>
+                </button>
+                <button id="nextBtn" class=" w-[50px] h-[50px] rounded-full text-white"><i class="fa-solid fa-forward"></i></button>
+                <button id="volumeBtn" class="w-[50px] h-[50px] rounded-full text-white">
+                    <input class="hidden" type="range" value="50" id="audioVolumeInput">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <a href="#audioList" id="volumeBtn" class="w-[50px] h-[50px] flex items-center justify-center rounded-full text-white">
+                    <i class="fa-solid fa-list"></i>
+                </a>
+               </div>
+            </div>
+        </div>
+        <div id="audioList" class="w-full max-w-[350px] m-auto mt-[50px]">
+
+        </div>
+    </div>
+
+    <audio data-currently-playing="false" src="" id="currentAudio"></audio>
+
+    <script src="./script/app.js"></script>
+</body>
+</html>
